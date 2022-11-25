@@ -8,6 +8,9 @@ Install bison and flex and libelf-dev
 
 2 Options : `make tinyconfig` or `menuconfig`
 
+0. (Needs to be done only for one time) : Create an init ramfs
+	`mkinitramfs -o ramdisk.img` [Link](https://yuankun.me/posts/running-raw-linux-kernel-in-qemu/)
+
 1. tinyconfig for now. try menuconfig if doesnt work.
 	* Doesnt work*
 2. use `make defconfig`
