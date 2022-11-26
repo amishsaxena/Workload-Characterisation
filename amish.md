@@ -11,4 +11,11 @@ $ qemu-system-x86_64 -enable-kvm -kernel arch/x86/boot/bzImage -smp cores=1 -m 2
   - `qemu-system-x86_64 -enable-kvm -kernel arch/x86/boot/bzImage -smp cores=1 -m 2048 -append "console=ttyS0" -initrd ramdisk.img -nographic -cpu host` : This does the same job too, no idea what `-cpu host` does...?
 
 
+### Nov 26 
+
+- QEMU ccode in linux branch does not build 
+- So use the QEMU code the builds in the Master branch.
+- Now run `./qemu-system-x86_64 -kernel ../../../../Workload-Characterisation/linux/linux-5.17.4/arch/x86/boot/bzImage -smp cores=1 -m 2048 -append "console=ttyS0" -initrd ../../../../Workload-Characterisation/linux/linux-5.17.4/ramdisk.img  -nographic` to check if kernel just runs on the custom QEMU build. 
+  - Seems to be working.
+- Now try running with the tracelog plugin and it just keeps printing the instructions to console. No idea if its actually running. Printing is slowing down things.
 
